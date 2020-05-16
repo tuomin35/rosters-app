@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rosters-app/static/css/main.ce997d8b.chunk.css",
+    "main.js": "/rosters-app/static/js/main.c72ce3d6.chunk.js",
+    "main.js.map": "/rosters-app/static/js/main.c72ce3d6.chunk.js.map",
+    "runtime-main.js": "/rosters-app/static/js/runtime-main.9a7e7da6.js",
+    "runtime-main.js.map": "/rosters-app/static/js/runtime-main.9a7e7da6.js.map",
+    "static/js/2.ab507a27.chunk.js": "/rosters-app/static/js/2.ab507a27.chunk.js",
+    "static/js/2.ab507a27.chunk.js.map": "/rosters-app/static/js/2.ab507a27.chunk.js.map",
+    "index.html": "/rosters-app/index.html",
+    "precache-manifest.a3148bc244e332e5b73272c5a8344b45.js": "/rosters-app/precache-manifest.a3148bc244e332e5b73272c5a8344b45.js",
+    "service-worker.js": "/rosters-app/service-worker.js",
+    "static/css/main.ce997d8b.chunk.css.map": "/rosters-app/static/css/main.ce997d8b.chunk.css.map",
+    "static/js/2.ab507a27.chunk.js.LICENSE.txt": "/rosters-app/static/js/2.ab507a27.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a7e7da6.js",
+    "static/js/2.ab507a27.chunk.js",
+    "static/css/main.ce997d8b.chunk.css",
+    "static/js/main.c72ce3d6.chunk.js"
+  ]
+}

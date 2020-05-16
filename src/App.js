@@ -1,6 +1,21 @@
 import React from 'react';
 import './App.css';
 
+class RunButton extends React.Component {
+  handleClick() {
+    console.log('this is:', this);
+    alert('todo...');
+  }
+
+  render() {
+    return (
+      <button className="button" onClick={() => this.handleClick()}>
+        Run
+      </button>
+    );
+  }
+}
+
 function App() {
   let players = `player1\nplayer2\nplayer3\nplayer4`
   let rankings = `player1:80\nplayer2:60\nplayer3:40\nplayer4:20`
@@ -28,7 +43,7 @@ function App() {
             <textarea id="rankings" className="resize-none" rows="20" cols="16">{rankings}</textarea>
           </div>
           <div className="column flex-end">
-            <button className="button" type="button">Run</button>
+            <RunButton />
           </div>
         </div>
       </div>

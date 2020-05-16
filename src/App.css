@@ -1,0 +1,60 @@
+.App {
+  text-align: left;
+}
+
+.App-header {
+  display: block;
+  text-align: center;
+}
+
+.App-content {
+  border: 1px solid blue;
+  margin: auto;
+  max-width: fit-content;
+  padding: 1em;
+}
+
+/* Flexbox */
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: auto;
+  max-width: 10em;
+  padding: 0 1em 0em 1em;
+}
+
+.flex-end {
+  align-self: flex-end;
+  padding: 0.25em;
+}
+
+/* HTML elements */
+
+.button {
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.resize-none {
+  resize: none;
+}
+
+/* Content */
+
+.players-list {
+  padding-bottom: 1em;
+}
+
+.team-name {
+  font-weight: bold;
+}

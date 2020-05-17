@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rosters-app/precache-manifest.92b478a6d5783f77ac33bddd68751ff1.js"
+  "/rosters-app/precache-manifest.199a16b3d10145e1d3528b3a94653889.js"
 );
 
 self.addEventListener('message', (event) => {

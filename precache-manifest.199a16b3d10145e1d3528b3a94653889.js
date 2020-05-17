@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0cae0c65f771005800b1fcbf9df13314",
+    "revision": "479557951df98edb461b15d49828462a",
     "url": "/rosters-app/index.html"
   },
   {
-    "revision": "e63adaf29984de2f0750",
-    "url": "/rosters-app/static/css/main.ce997d8b.chunk.css"
+    "revision": "7f52ecd1a343879dcde7",
+    "url": "/rosters-app/static/css/main.71ca8d6c.chunk.css"
   },
   {
     "revision": "4bdce7bc97cb4b7f857f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rosters-app/static/js/2.5909560c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e63adaf29984de2f0750",
-    "url": "/rosters-app/static/js/main.dab6c172.chunk.js"
+    "revision": "7f52ecd1a343879dcde7",
+    "url": "/rosters-app/static/js/main.c984bffa.chunk.js"
   },
   {
     "revision": "ecaade9713d9d838d253",

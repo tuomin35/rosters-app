@@ -60,6 +60,8 @@ const App = (props) => {
               label="Rankings"
               defaultValue={data.rankings} />
           </div>
+        </div>
+        <div className="row">
           <div id="action-column" className="column flex-end">
             <Button handleClick={updateData} label='Run' />
           </div>
@@ -71,7 +73,7 @@ const App = (props) => {
 
 const Button = (props) => {
   return (
-    <button className="button" onClick={props.handleClick}>
+    <button className="button float-right" onClick={props.handleClick}>
       {props.label}
     </button>
   )

@@ -54,6 +54,9 @@ const App = (props) => {
       teamWhite.push(players[i])
     }
 
+    teamRed.sort()
+    teamWhite.sort()
+
     const newData = {
       ...data,
       teamRed: teamRed,

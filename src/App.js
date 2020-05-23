@@ -14,7 +14,8 @@ const App = (props) => {
   })
 
   const updateData = () => {
-    let players = data.players.split('\n')
+    const players = document.getElementById('players-input').value.split('\n')
+    const rankings = document.getElementById('rankings-input').value.split('\n')
     let teamRed = []
     let teamWhite = []
 
@@ -84,6 +85,7 @@ const InputTextArea = (props) => {
     <div id={props.id}>
       <div>{props.label}</div>
       <textarea
+        id={`${props.id}-input`}
         className="resize-none"
         rows="20"
         cols="16"

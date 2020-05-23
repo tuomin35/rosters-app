@@ -13,11 +13,33 @@ const App = (props) => {
     teamWhite: []
   })
 
+  const sortData = (players, rankings) => {
+    players.sort(function (a, b) {
+      let aRanking = 50
+      let bRanking = 50
+      for (let i = 0; i < rankings.length; i++) {
+        let ranking = rankings[i].split(':')
+        if (ranking.length === 2) {
+          if (ranking[0] === a) {
+            aRanking = ranking[1]
+          }
+          if (ranking[0] === b) {
+            bRanking = ranking[1]
+          }
+        }
+      }
+      return bRanking - aRanking
+    });
+    console.log("players (sorted)", players)
+  }
+
   const updateData = () => {
     const players = document.getElementById('players-input').value.split('\n')
     const rankings = document.getElementById('rankings-input').value.split('\n')
     let teamRed = []
     let teamWhite = []
+
+    sortData(players, rankings)
 
     if (data.fair && players.length > 1) {
       // swap position of top two players before making team rosters to equalize rosters a bit

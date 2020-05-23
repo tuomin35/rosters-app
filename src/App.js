@@ -13,6 +13,14 @@ const App = (props) => {
     teamWhite: []
   })
 
+  const readData = (id) => {
+    return document.getElementById(id).value
+      .split('\n')
+      .filter(
+        function (el) { return el; } // remove falsy values
+      )
+  }
+
   const sortData = (players, rankings) => {
     players.sort(function (a, b) {
       let aRanking = 50
@@ -34,8 +42,8 @@ const App = (props) => {
   }
 
   const updateData = () => {
-    const players = document.getElementById('players-input').value.split('\n')
-    const rankings = document.getElementById('rankings-input').value.split('\n')
+    const players = readData('players-input')
+    const rankings = readData('rankings-input')
     let teamRed = []
     let teamWhite = []
 

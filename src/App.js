@@ -49,7 +49,8 @@ const App = (props) => {
 
     sortData(players, rankings)
 
-    if (data.fair && players.length > 1) {
+    const fair = document.getElementById('fair').checked
+    if (fair && players.length > 1) {
       // swap position of top two players before making team rosters to equalize rosters a bit
       [players[0], players[1]] = [players[1], players[0]]
     }
@@ -67,6 +68,7 @@ const App = (props) => {
 
     const newData = {
       ...data,
+      fair: fair,
       teamRed: teamRed,
       teamWhite: teamWhite
     }
@@ -96,6 +98,10 @@ const App = (props) => {
           </div>
         </div>
         <div className="row">
+          <span title="Run with 'fair' algorithm">
+            <input type="checkbox" id="fair" defaultChecked={data.fair} />
+            <label htmlFor="fair">Fair</label>
+          </span>
           <div id="action-column" className="column flex-end">
             <Button handleClick={updateData} label='Run' />
           </div>

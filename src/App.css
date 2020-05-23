@@ -52,6 +52,10 @@
   text-decoration: none;
 }
 
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
 .resize-none {
   resize: none;
 }

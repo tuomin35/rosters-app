@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rosters-app/static/css/main.c768361f.chunk.css",
-    "main.js": "/rosters-app/static/js/main.35451f11.chunk.js",
-    "main.js.map": "/rosters-app/static/js/main.35451f11.chunk.js.map",
+    "main.css": "/rosters-app/static/css/main.61aacef1.chunk.css",
+    "main.js": "/rosters-app/static/js/main.b7b534aa.chunk.js",
+    "main.js.map": "/rosters-app/static/js/main.b7b534aa.chunk.js.map",
     "runtime-main.js": "/rosters-app/static/js/runtime-main.9a7e7da6.js",
     "runtime-main.js.map": "/rosters-app/static/js/runtime-main.9a7e7da6.js.map",
     "static/js/2.5909560c.chunk.js": "/rosters-app/static/js/2.5909560c.chunk.js",
     "static/js/2.5909560c.chunk.js.map": "/rosters-app/static/js/2.5909560c.chunk.js.map",
     "index.html": "/rosters-app/index.html",
-    "precache-manifest.9735f09317bf62709bf9aca76edd3ecc.js": "/rosters-app/precache-manifest.9735f09317bf62709bf9aca76edd3ecc.js",
+    "precache-manifest.4985e224cb2a9fdcacdaa6610a68b734.js": "/rosters-app/precache-manifest.4985e224cb2a9fdcacdaa6610a68b734.js",
     "service-worker.js": "/rosters-app/service-worker.js",
-    "static/css/main.c768361f.chunk.css.map": "/rosters-app/static/css/main.c768361f.chunk.css.map",
+    "static/css/main.61aacef1.chunk.css.map": "/rosters-app/static/css/main.61aacef1.chunk.css.map",
     "static/js/2.5909560c.chunk.js.LICENSE.txt": "/rosters-app/static/js/2.5909560c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9a7e7da6.js",
     "static/js/2.5909560c.chunk.js",
-    "static/css/main.c768361f.chunk.css",
-    "static/js/main.35451f11.chunk.js"
+    "static/css/main.61aacef1.chunk.css",
+    "static/js/main.b7b534aa.chunk.js"
   ]
 }

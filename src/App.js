@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 
+const algorithmDefaultValue = 'classic'
 const playersDefaultValue = `player1\nplayer2\nplayer3\nplayer4`
 const rankingsDefaultValue = `player1:80\nplayer2:60\nplayer3:40\nplayer4:20`
 
 const App = (props) => {
   const [data, setData] = useState({
-    fair: true,
+    algorithm: algorithmDefaultValue,
     players: playersDefaultValue,
     rankings: rankingsDefaultValue,
     teamRed: [],
@@ -19,6 +20,15 @@ const App = (props) => {
       .filter(
         function (el) { return el; } // remove falsy values
       )
+  }
+
+  const setAlgorithm = (algorithm) => {
+    console.log("algorithm", algorithm)
+    const newData = {
+      ...data,
+      algorithm: algorithm
+    }
+    setData(newData)
   }
 
   const sortData = (players, rankings) => {
@@ -42,6 +52,7 @@ const App = (props) => {
   }
 
   const updateData = () => {
+    const algorithm = data.algorithm
     const players = readData('players-input')
     const rankings = readData('rankings-input')
     let teamRed = []
@@ -49,10 +60,11 @@ const App = (props) => {
 
     sortData(players, rankings)
 
-    const fair = document.getElementById('fair').checked
-    if (fair && players.length > 1) {
+    if (algorithm === 'fair' && players.length > 1) {
       // swap position of top two players before making team rosters to equalize rosters a bit
       [players[0], players[1]] = [players[1], players[0]]
+    } else if (algorithm === 'random') {
+      players.sort(function (a, b) { return 0.5 - Math.random() });
     }
 
     for (let i = 0; i < players.length; i = i + 2) {
@@ -68,7 +80,7 @@ const App = (props) => {
 
     const newData = {
       ...data,
-      fair: fair,
+      algorithm: algorithm,
       teamRed: teamRed,
       teamWhite: teamWhite
     }
@@ -98,10 +110,7 @@ const App = (props) => {
           </div>
         </div>
         <div className="row">
-          <span title="Run with 'fair' algorithm">
-            <input type="checkbox" id="fair" defaultChecked={data.fair} />
-            <label htmlFor="fair">Fair</label>
-          </span>
+          <Algorithm setAlgorithm={setAlgorithm} />
           <div id="action-column" className="column flex-end">
             <Button handleClick={updateData} label='Run' />
           </div>
@@ -109,6 +118,39 @@ const App = (props) => {
       </div>
     </div>
   );
+}
+
+const Algorithm = (props) => {
+
+  const updateValue = (event) => {
+    props.setAlgorithm(event.target.value)
+  }
+
+  return (
+    <div>
+      <div>Algorithm</div>
+      <AlgorithmRadioButton algorithm="classic" label="Classic" handleChange={updateValue} />
+      <br />
+      <AlgorithmRadioButton algorithm="fair" label="Fair" handleChange={updateValue} />
+      <br />
+      <AlgorithmRadioButton algorithm="random" label="Random" handleChange={updateValue} />
+    </div>
+  )
+}
+
+const AlgorithmRadioButton = (props) => {
+  return (
+    <span>
+      <input
+        type="radio"
+        id={props.algorithm}
+        name="algorithm"
+        defaultChecked={props.algorithm === algorithmDefaultValue}
+        onChange={props.handleChange}
+        value={props.algorithm} />
+      <label htmlFor={props.algorithm}>{props.label}</label>
+    </span>
+  )
 }
 
 const Button = (props) => {

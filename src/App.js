@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 const algorithmDefaultValue = 'classic'
-const playersDefaultValue = `player1\nplayer2\nplayer3\nplayer4`
+const playersDefaultValue = `player1\nplayer2\nplayer3\nplayer4\nplayerX`
 const rankingsDefaultValue = `player1:80\nplayer2:60\nplayer3:40\nplayer4:20`
 
 const App = (props) => {
@@ -13,6 +13,22 @@ const App = (props) => {
     teamRed: [],
     teamWhite: []
   })
+
+  const fixRankings = (players, rankings) => {
+    players.forEach(player => {
+      let found = false
+      rankings.forEach(ranking => {
+        if (ranking.startsWith(player + ":")) {
+          found = true
+        }
+      })
+      if (!found) {
+        console.log("not found", player)
+        rankings.push(`${player}:50`)
+      }
+    })
+    document.getElementById('rankings-input').value = rankings.join(`\n`)
+  }
 
   const readData = (id) => {
     return document.getElementById(id).value
@@ -31,7 +47,7 @@ const App = (props) => {
     setData(newData)
   }
 
-  const sortData = (players, rankings) => {
+  const sortPlayers = (players, rankings) => {
     players.sort(function (a, b) {
       let aRanking = 50
       let bRanking = 50
@@ -55,10 +71,11 @@ const App = (props) => {
     const algorithm = data.algorithm
     const players = readData('players-input')
     const rankings = readData('rankings-input')
-    let teamRed = []
-    let teamWhite = []
+    const teamRed = []
+    const teamWhite = []
 
-    sortData(players, rankings)
+    fixRankings(players, rankings)
+    sortPlayers(players, rankings)
 
     if (algorithm === 'fair' && players.length > 1) {
       // swap position of top two players before making team rosters to equalize rosters a bit

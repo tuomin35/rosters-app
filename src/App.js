@@ -129,18 +129,25 @@ const Algorithm = (props) => {
   return (
     <div>
       <div>Algorithm</div>
-      <AlgorithmRadioButton algorithm="classic" label="Classic" handleChange={updateValue} />
+      <AlgorithmRadioButton algorithm="classic" label="Classic" handleChange={updateValue}
+        title='The teams take turns picking players.
+        Red team has odd picks: 1st, 3rd, 5th, ...
+        White teams has even picks: 2nd, 4th, ...' />
       <br />
-      <AlgorithmRadioButton algorithm="fair" label="Fair" handleChange={updateValue} />
+      <AlgorithmRadioButton algorithm="fair" label="Fair" handleChange={updateValue}
+        title='Like the classic algorithm, but top two picks are reversed.
+        White team now has the 1st &amp; 4th pick.
+        Red team has the 2nd &amp; 3rd pick.' />
       <br />
-      <AlgorithmRadioButton algorithm="random" label="Random" handleChange={updateValue} />
+      <AlgorithmRadioButton algorithm="random" label="Random" handleChange={updateValue}
+        title="Random rosters for each run." />
     </div>
   )
 }
 
 const AlgorithmRadioButton = (props) => {
   return (
-    <span>
+    <span title={props.title}>
       <input
         type="radio"
         id={props.algorithm}
